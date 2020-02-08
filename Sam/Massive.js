@@ -22,7 +22,7 @@ function noobSort(arrToSort){
 }
 console.log(noobSort(arr))
 function isSortWorked(sorted, original){
-    if (sorted.length!=original.length){//проверка длины (оптимизация, чокаво)
+    if (sorted.length != original.length){//проверка длины (оптимизация, чокаво)
         console.log('Разная длина!')
         return false;
     }
@@ -34,14 +34,14 @@ function isSortWorked(sorted, original){
     }
     let originalCopy = Array.from(original);
     let index = 0; //нужно ли "= 0"??
-    for (let i=0; i < sorted.length; i+=1){//проверка элементов
+    for (let i = 0; i < sorted.length; i += 1){//проверка элементов
         index = originalCopy.indexOf(sorted[i],0);
-        if (index>-1){                     //проверка наличия совпадения 
+        if (index > -1){                     //проверка наличия совпадения 
             originalCopy.splice(index,1);//удаляются одинаковые элементы
         }
         else return false;
     }
-    if (originalCopy[0]===undefined){
+    if (originalCopy[0] === undefined){
         console.log('Сортировка работает!')
         return true;
     }
